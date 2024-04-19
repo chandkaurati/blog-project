@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/style.css">
+  <style>
+  header{
+
+     border-bottom: 0.6px solid rgb(235, 235, 235) ;
+     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+     
+    }
+
+    ::-webkit-scrollbar{
+         display:none;
+    }
+   
+    main{
+         /* border: 2px solid red; */
+         display: flex;
+         align-items: center;
+         justify-content: center;
+        
+    }
+
+    .content-container{
+        max-width: 50%;
+         /* border: 2px solid rgb(121, 121, 4); */
+         padding: 2em;
+        
+         overflow: auto;
+         height: 100vh;
+        
+    }
+
+    .content-container article p{
+          font-size: larger;
+          width: 100%;
+          /* height: 20em; */
+    }
+    .img-box{
+        
+    }
+    .img-box img{
+         /* border: 2px solid blue; */
+         object-fit: cover;
+    }
+  </style>
+</head>
+<body>
+    
+  <header>
+
+    <div class="container">
+
+      <nav class="navbar">
+
+        <a href="../../index.html">
+          <!-- <img src="./assets/images/logo-light.svg" alt="SimpleBlog logo" width="150" class="logo-light">
+          <img src="./assets/images/logo-dark.svg" alt="SimpleBlog logo" width="150" class="logo-dark"> -->
+          <h1>Code Info</h1>
+        </a>
+
+        <div class="btn-group">
+
+          <button class="theme-btn theme-btn-mobile light">
+            <ion-icon name="moon" class="moon"></ion-icon>
+            <ion-icon name="sunny" class="sun"></ion-icon>
+          </button>
+
+          <button class="nav-menu-btn">
+            <ion-icon name="menu-outline"></ion-icon>
+          </button>
+
+        </div>
+
+        <div class="flex-wrapper">
+
+          <ul class="desktop-nav">
+
+            <li>
+              <a href="#" class="nav-link">Home</a>
+            </li>
+
+            <li>
+              <a href="#" class="nav-link">About Me</a>
+            </li>
+
+            <li>
+              <a href="#" class="nav-link">Contact</a>
+            </li>
+
+          </ul>
+
+          <button class="theme-btn theme-btn-desktop light">
+            <ion-icon name="moon" class="moon"></ion-icon>
+            <ion-icon name="sunny" class="sun"></ion-icon>
+          </button>
+
+        </div>
+
+        <div class="mobile-nav">
+
+          <button class="nav-close-btn">
+            <ion-icon name="close-outline"></ion-icon>
+          </button>
+
+          <div class="wrapper">
+
+            <p class="h3 nav-title">Main Menu</p>
+
+            <ul>
+              <li class="nav-item">
+                <a href="#" class="nav-link">Home</a>
+              </li>
+
+              <li class="nav-item">
+                <a href="#" class="nav-link">About Me</a>
+              </li>
+
+              <li class="nav-item">
+                <a href="#" class="nav-link">Contact</a>
+              </li>
+            </ul>
+
+          </div>
+
+          <div>
+
+            <p class="h3 nav-title">Topics</p>
+
+            <ul>
+              <li class="nav-item">
+                <a href="#" class="nav-link">Database</a>
+              </li>
+
+              <li class="nav-item">
+                <a href="#" class="nav-link">Accessibility</a>
+              </li>
+
+              <li class="nav-item">
+                <a href="#" class="nav-link">Web Performance</a>
+              </li>
+            </ul>
+
+          </div>
+
+        </div>
+
+      </nav>
+
+    </div>
+
+  </header>
+
+
+  <main>
+    <div class="content-container">
+        <h1>Welcome to our beginner's guide to Python programming!</h1>
+     <div class="img-box"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0VPFvcjrC69I1asjhYdDeVL9s7V6mObFlShmDWQKY4A&s" alt=""></div>
+     <article>
+        <p>Python is a versatile and beginner-friendly programming language known for its simplicity, readability, and vast ecosystem of libraries and frameworks. Whether you're new to coding or experienced in other languages, Python is an excellent choice for web development, data analysis, machine learning, automation, and more. In this article, we'll explore the fundamentals of Python programming and provide you with the knowledge you need to start writing your own Python programs.</p>
+        
+        <h2>1. Why Python?</h2>
+        <p>Python has gained immense popularity in recent years due to its ease of use and readability. Its syntax closely resembles natural language, making it accessible to beginners while remaining powerful enough for seasoned developers. Python's extensive standard library and third-party packages simplify complex tasks and accelerate development, making it an ideal choice for a wide range of applications.</p>
+        
+        <h2>2. Setting Up Your Python Environment:</h2>
+        <p>Before you can start coding in Python, you'll need to set up your development environment. The official Python website provides installers for Windows, macOS, and Linux. Alternatively, you can use package managers like Anaconda or pip to install Python and manage packages. Once Python is installed, you can choose from a variety of Integrated Development Environments (IDEs) such as PyCharm, VS Code, or Jupyter Notebook to write and execute your Python code.</p>
+        
+        <h2>3. Basic Syntax and Structure:</h2>
+        <p>Python programs are composed of statements, expressions, variables, functions, and control structures. Here's a brief overview of Python syntax:</p>
+        <ul>
+            <li>Variables: Variables are used to store data values. Unlike statically-typed languages, Python is dynamically typed, meaning you don't need to declare variable types explicitly.</li>
+            <li>Control Structures: Python supports standard control structures such as if, else, elif, for, while, and try/except.</li>
+            <li>Functions: Functions are blocks of reusable code that perform a specific task. You can define your own functions using the def keyword.</li>
+            <li>Data Types: Python supports various data types including integers, floating-point numbers, strings, lists, tuples, dictionaries, and sets.</li>
+        </ul>
+        
+        <h2>4. Exploring Python's Ecosystem:</h2>
+        <p>One of the key strengths of Python is its vast ecosystem of libraries and frameworks. Whether you're working with data, building web applications, or diving into machine learning, there's likely a Python library to help you. Some popular libraries include NumPy for numerical computing, pandas for data manipulation, Flask and Django for web development, TensorFlow and PyTorch for machine learning, and matplotlib and seaborn for data visualization.</p>
+        
+        <h2>5. Pythonic Idioms and Best Practices:</h2>
+        <p>Python has its own set of idioms and best practices that distinguish it from other programming languages. Embracing these idioms can make your code more readable, maintainable, and Pythonic. Some common Pythonic principles include using list comprehensions, avoiding unnecessary nesting, following the PEP 8 style guide, and writing docstrings for your functions.</p>
+        
+        <h2>Conclusion:</h2>
+        <p>Python is a versatile and beginner-friendly programming language with a vibrant community and vast ecosystem. In this article, we've covered the basics of Python programming, including setting up your development environment, understanding basic syntax and structure, exploring Python's ecosystem of libraries and frameworks, and embracing Pythonic idioms and best practices. Armed with this knowledge, you're well-equipped to start writing your own Python programs and exploring the endless possibilities Python has to offer. Happy coding!</p>
+    </article>
+    
+    
+    
+    
+    
+    
+    </div>
+  </main>
+
+</body>
+</html>

@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/style.css">
+  <style>
+  header{
+
+     border-bottom: 0.6px solid rgb(235, 235, 235) ;
+     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+     
+    }
+
+    ::-webkit-scrollbar{
+         display:none;
+    }
+   
+    main{
+         /* border: 2px solid red; */
+         display: flex;
+         align-items: center;
+         justify-content: center;
+        
+    }
+
+    .content-container{
+        max-width: 50%;
+         /* border: 2px solid rgb(121, 121, 4); */
+         padding: 2em;
+        
+         overflow: auto;
+         height: 100vh;
+        
+    }
+
+    .content-container article p{
+          font-size: larger;
+          width: 100%;
+          /* height: 20em; */
+    }
+    .img-box{
+        
+    }
+    .img-box img{
+         /* border: 2px solid blue; */
+         object-fit: cover;
+    }
+  </style>
+</head>
+<body>
+    
+  <header>
+
+    <div class="container">
+
+      <nav class="navbar">
+
+        <a href="../../index.html">
+          <!-- <img src="./assets/images/logo-light.svg" alt="SimpleBlog logo" width="150" class="logo-light">
+          <img src="./assets/images/logo-dark.svg" alt="SimpleBlog logo" width="150" class="logo-dark"> -->
+          <h1>Code Info</h1>
+        </a>
+
+        <div class="btn-group">
+
+          <button class="theme-btn theme-btn-mobile light">
+            <ion-icon name="moon" class="moon"></ion-icon>
+            <ion-icon name="sunny" class="sun"></ion-icon>
+          </button>
+
+          <button class="nav-menu-btn">
+            <ion-icon name="menu-outline"></ion-icon>
+          </button>
+
+        </div>
+
+        <div class="flex-wrapper">
+
+          <ul class="desktop-nav">
+
+            <li>
+              <a href="../../index.html" class="nav-link">Home</a>
+            </li>
+
+            <li>
+              <a href="#" class="nav-link">About Me</a>
+            </li>
+
+            <li>
+              <a href="https://www.linkedin.com/in/samaypatil/" class="nav-link">Contact</a>
+            </li>
+
+          </ul>
+
+          <!-- <button class="theme-btn theme-btn-desktop light">
+            <ion-icon name="moon" class="moon"></ion-icon>
+            <ion-icon name="sunny" class="sun"></ion-icon>
+          </button> -->
+
+        </div>
+
+        <div class="mobile-nav">
+
+          <button class="nav-close-btn">
+            <ion-icon name="close-outline"></ion-icon>
+          </button>
+
+          <div class="wrapper">
+
+            <p class="h3 nav-title">Main Menu</p>
+
+            <ul>
+              <li class="nav-item">
+                <a href="#" class="nav-link">Home</a>
+              </li>
+
+              <li class="nav-item">
+                <a href="#" class="nav-link">About Me</a>
+              </li>
+
+              <li class="nav-item">
+                <a href="#" class="nav-link">Contact</a>
+              </li>
+            </ul>
+
+          </div>
+
+          <div>
+
+            <p class="h3 nav-title">Topics</p>
+
+            <ul>
+              <li class="nav-item">
+                <a href="#" class="nav-link">Database</a>
+              </li>
+
+              <li class="nav-item">
+                <a href="#" class="nav-link">Accessibility</a>
+              </li>
+
+              <li class="nav-item">
+                <a href="#" class="nav-link">Web Performance</a>
+              </li>
+            </ul>
+
+          </div>
+
+        </div>
+
+      </nav>
+
+    </div>
+
+  </header>
+
+
+  <main>
+    <div class="content-container">
+        <h1>Ensuring Accessibility in Web Development: A Comprehensive Guide</h1>
+        <div class="img-box"><img width="450" style="object-fit: cover;" src="https://img.freepik.com/free-vector/ui-ux-designers-isometric-composition-with-small-people-creating-custom-design-web-site-3d-vector-illustration_1284-68939.jpg?t=st=1713503854~exp=1713507454~hmac=b1f729df6fe60fb8b40b0a1a6588307905c5f656c3fe2666f100fbfcf795b7ac&w=740" alt=""></div>
+ 
+Building a RESTful CRUD API with Node.js, Express, and MongoDB
+
+In modern web development, creating a robust and scalable backend API is essential for building dynamic and interactive web applications. In this tutorial, we'll walk through the process of building a RESTful CRUD (Create, Read, Update, Delete) API using Node.js, Express, and MongoDB. This combination of technologies allows for fast development, flexibility, and seamless integration with frontend frameworks like React, Angular, or Vue.js.
+
+Prerequisites
+
+Before we begin, ensure that you have the following prerequisites installed on your system:
+
+Node.js and npm (Node Package Manager)
+MongoDB (Make sure it's running locally or accessible via a cloud service)
+Text editor or IDE of your choice (e.g., Visual Studio Code, Sublime Text)
+Step 1: Setting Up Your Project
+
+First, create a new directory for your project and navigate into it:
+
+bash
+Copy code
+mkdir node-express-mongodb-api
+cd node-express-mongodb-api
+Initialize a new Node.js project using npm:
+
+bash
+Copy code
+npm init -y
+This will create a package.json file in your project directory.
+
+Step 2: Installing Dependencies
+
+Next, install the necessary dependencies for our project:
+
+bash
+Copy code
+npm install express mongoose body-parser
+Express: A minimalist web framework for Node.js that simplifies routing, middleware handling, and more.
+Mongoose: An ODM (Object Data Modeling) library for MongoDB and Node.js, providing a higher-level abstraction for working with MongoDB databases.
+Body-parser: Middleware for parsing incoming request bodies in Express applications.
+Step 3: Setting Up Express Server
+
+Create a new file named server.js in your project directory and add the following code to set up an Express server:
+
+javascript
+Copy code
+// server.js
+
+const express = require('express');
+const bodyParser = require('body-parser');
+const mongoose = require('mongoose');
+
+const app = express();
+const PORT = process.env.PORT || 3000;
+
+// Middleware
+app.use(bodyParser.json());
+
+// Routes
+app.get('/', (req, res) => {
+  res.send('Welcome to the RESTful API!');
+});
+
+// Start server
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
+});
+This code sets up a basic Express server listening on port 3000 and adds a middleware to parse JSON request bodies.
+
+Step 4: Connecting to MongoDB
+
+Now, let's connect our Express application to MongoDB using Mongoose. Replace the mongoose.connect() method with the connection URL of your MongoDB database:
+
+javascript
+Copy code
+// server.js
+
+// Connect to MongoDB
+mongoose.connect('mongodb://localhost:27017/mydatabase', {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+})
+  .then(() => {
+    console.log('Connected to MongoDB');
+  })
+  .catch((err) => {
+    console.error('Error connecting to MongoDB', err);
+  });
+Make sure to replace 'mongodb://localhost:27017/mydatabase' with the appropriate connection URL for your MongoDB database.
+
+Step 5: Creating Mongoose Models
+
+Define Mongoose models to represent the data structure of your MongoDB documents. For example, let's create a Note model for a simple note-taking application:
+
+javascript
+Copy code
+// models/note.js
+
+const mongoose = require('mongoose');
+
+const noteSchema = new mongoose.Schema({
+  title: {
+    type: String,
+    required: true
+  },
+  content: String,
+  date: {
+    type: Date,
+    default: Date.now
+  }
+});
+
+module.exports = mongoose.model('Note', noteSchema);
+Step 6: Implementing CRUD Operations
+
+Now, let's implement the CRUD operations for managing notes in our API. We'll create routes for creating, reading, updating, and deleting notes.
+
+javascript
+Copy code
+// routes/notes.js
+
+const express = require('express');
+const router = express.Router();
+const Note = require('../models/note');
+
+// Create a new note
+router.post('/notes', async (req, res) => {
+  try {
+    const note = new Note(req.body);
+    await note.save();
+    res.status(201).send(note);
+  } catch (err) {
+    res.status(400).send(err);
+  }
+});
+
+// Get all notes
+router.get('/notes', async (req, res) => {
+  try {
+    const notes = await Note.find();
+    res.send(notes);
+  } catch (err) {
+    res.status(500).send(err);
+  }
+});
+
+// Get a single note by ID
+router.get('/notes/:id', async (req, res) => {
+  try {
+    const note = await Note.findById(req.params.id);
+    if (!note) {
+      return res.status(404).send({ message: 'Note not found' });
+    }
+    res.send(note);
+  } catch (err) {
+    res.status(500).send(err);
+  }
+});
+
+// Update a note by ID
+router.patch('/notes/:id', async (req, res) => {
+  try {
+    const note = await Note.findByIdAndUpdate(req.params.id, req.body, { new: true });
+    if (!note) {
+      return res.status(404).send({ message: 'Note not found' });
+    }
+    res.send(note);
+  } catch (err) {
+    res.status(400).send(err);
+  }
+});
+
+// Delete a note by ID
+router.delete('/notes/:id', async (req, res) => {
+  try {
+    const note = await Note.findByIdAndDelete(req.params.id);
+    if (!note) {
+      return res.status(404).send({ message: 'Note not found' });
+    }
+    res.send({ message: 'Note deleted successfully' });
+  } catch (err) {
+    res.status(500).send(err);
+  }
+});
+
+module.exports = router;
+Step 7: Mounting Routes
+
+Finally, mount the routes in your Express application by requiring the notes.js file and using app.use() to define the base URL for your API endpoints:
+
+javascript
+Copy code
+// server.js
+
+const notesRouter = require('./routes/notes');
+app.use('/api', notesRouter);
+Step 8: Testing Your API
+
+You can now start your Express server and test your API endpoints using tools like Postman or curl. Here are some example requests you can make:
+
+Create a new note:
+POST http://localhost:3000/api/notes
+Request body: { "title": "Sample Note", "content": "This is a sample note" }
+Get all notes:
+GET http://localhost:3000/api/notes
+Get a single note by ID:
+GET http://localhost:3000/api/notes/:id
+Update a note by ID:
+PATCH http://localhost:3000/api/notes/:id
+Request body: { "content": "Updated content" }
+Delete a note by ID:
+DELETE http://localhost:3000/api/notes/:id
+Conclusion
+
+Congratulations! You've successfully built a RESTful CRUD API with Node.js, Express, and MongoDB. This API can serve as the backend for various web and mobile applications,
+
+
+ write this article in article ad 
+
+NOte add code section in  code section box
+ChatGPT
+<article>
+  <h1>Building a RESTful CRUD API with Node.js, Express, and MongoDB</h1>
+  <p>In modern web development, creating a robust and scalable backend API is essential for building dynamic and interactive web applications. In this tutorial, we'll walk through the process of building a RESTful CRUD (Create, Read, Update, Delete) API using Node.js, Express, and MongoDB. This combination of technologies allows for fast development, flexibility, and seamless integration with frontend frameworks like React, Angular, or Vue.js.</p>
+  <h2>Prerequisites</h2>
+  <p>Before we begin, ensure that you have the following prerequisites installed on your system:</p>
+  <ul>
+    <li>Node.js and npm (Node Package Manager)</li>
+    <li>MongoDB (Make sure it's running locally or accessible via a cloud service)</li>
+    <li>Text editor or IDE of your choice (e.g., Visual Studio Code, Sublime Text)</li>
+  </ul>
+  <h2>Step 1: Setting Up Your Project</h2>
+  <p>First, create a new directory for your project and navigate into it:</p>
+  <code>
+    mkdir node-express-mongodb-api<br>
+    cd node-express-mongodb-api
+  </code>
+  <p>Initialize a new Node.js project using npm:</p>
+<code>npm init -y</code>
+
+  <p>This will create a <code>package.json</code> file in your project directory.</p>
+  <!-- Steps 2 to 6 omitted for brevity -->
+  <h2>Step 7: Mounting Routes</h2>
+  <p>Finally, mount the routes in your Express application by requiring the <code>notes.js</code> file and using <code>app.use()</code> to define the base URL for your API endpoints:</p>
+  <pre><code>
+    // server.js
+
+    const notesRouter = require('./routes/notes');
+    app.use('/api', notesRouter);
+  </code></pre>
+  <h2>Step 8: Testing Your API</h2>
+  <p>You can now start your Express server and test your API endpoints using tools like Postman or curl. Here are some example requests you can make:</p>
+  <ul>
+    <li>Create a new note:<br>
+      <code>POST http://localhost:3000/api/notes</code><br>
+      Request body: <code>{ "title": "Sample Note", "content": "This is a sample note" }</code>
+    </li>
+    <li>Get all notes:<br>
+      <code>GET http://localhost:3000/api/notes</code>
+    </li>
+    <li>Get a single note by ID:<br>
+      <code>GET http://localhost:3000/api/notes/:id</code>
+    </li>
+    <li>Update a note by ID:<br>
+      <code>PATCH http://localhost:3000/api/notes/:id</code><br>
+      Request body: <code>{ "content": "Updated content" }</code>
+    </li>
+    <li>Delete a note by ID:<br>
+      <code>DELETE http://localhost:3000/api/notes/:id</code>
+    </li>
+  </ul>
+  <h2>Conclusion</h2>
+  <p>Congratulations! You've successfully built a RESTful CRUD API with Node.js, Express, and MongoDB. This API can serve as the backend for various web and mobile applications.</p>
+</article>
+    </div>
+  </main>
+
+</body>
+</html>

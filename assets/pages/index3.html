@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/style.css">
+  <style>
+  header{
+
+     border-bottom: 0.6px solid rgb(235, 235, 235) ;
+     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+     
+    }
+
+    ::-webkit-scrollbar{
+         display:none;
+    }
+   
+    main{
+         /* border: 2px solid red; */
+         display: flex;
+         align-items: center;
+         justify-content: center;
+        
+    }
+
+    .content-container{
+        max-width: 50%;
+         /* border: 2px solid rgb(121, 121, 4); */
+         padding: 2em;
+        
+         overflow: auto;
+         height: 100vh;
+        
+    }
+
+    .content-container article p{
+          font-size: larger;
+          width: 100%;
+          /* height: 20em; */
+    }
+    .img-box{
+        
+    }
+    .img-box img{
+         /* border: 2px solid blue; */
+         object-fit: cover;
+    }
+  </style>
+</head>
+<body>
+    
+  <header>
+
+    <div class="container">
+
+      <nav class="navbar">
+
+        <a href="../../index.html">
+          <!-- <img src="./assets/images/logo-light.svg" alt="SimpleBlog logo" width="150" class="logo-light">
+          <img src="./assets/images/logo-dark.svg" alt="SimpleBlog logo" width="150" class="logo-dark"> -->
+          <h1>Code Info</h1>
+        </a>
+
+        <div class="btn-group">
+
+          <button class="theme-btn theme-btn-mobile light">
+            <ion-icon name="moon" class="moon"></ion-icon>
+            <ion-icon name="sunny" class="sun"></ion-icon>
+          </button>
+
+          <button class="nav-menu-btn">
+            <ion-icon name="menu-outline"></ion-icon>
+          </button>
+
+        </div>
+
+        <div class="flex-wrapper">
+
+          <ul class="desktop-nav">
+
+            <li>
+              <a href="../../index.html" class="nav-link">Home</a>
+            </li>
+
+            <li>
+              <a href="#" class="nav-link">About Me</a>
+            </li>
+
+            <li>
+              <a href="https://www.linkedin.com/in/samaypatil/" class="nav-link">Contact</a>
+            </li>
+
+          </ul>
+
+          <!-- <button class="theme-btn theme-btn-desktop light">
+            <ion-icon name="moon" class="moon"></ion-icon>
+            <ion-icon name="sunny" class="sun"></ion-icon>
+          </button> -->
+
+        </div>
+
+        <div class="mobile-nav">
+
+          <button class="nav-close-btn">
+            <ion-icon name="close-outline"></ion-icon>
+          </button>
+
+          <div class="wrapper">
+
+            <p class="h3 nav-title">Main Menu</p>
+
+            <ul>
+              <li class="nav-item">
+                <a href="#" class="nav-link">Home</a>
+              </li>
+
+              <li class="nav-item">
+                <a href="#" class="nav-link">About Me</a>
+              </li>
+
+              <li class="nav-item">
+                <a href="#" class="nav-link">Contact</a>
+              </li>
+            </ul>
+
+          </div>
+
+          <div>
+
+            <p class="h3 nav-title">Topics</p>
+
+            <ul>
+              <li class="nav-item">
+                <a href="#" class="nav-link">Database</a>
+              </li>
+
+              <li class="nav-item">
+                <a href="#" class="nav-link">Accessibility</a>
+              </li>
+
+              <li class="nav-item">
+                <a href="#" class="nav-link">Web Performance</a>
+              </li>
+            </ul>
+
+          </div>
+
+        </div>
+
+      </nav>
+
+    </div>
+
+  </header>
+
+
+  <main>
+    <div class="content-container">
+        <h1>Ensuring Accessibility in Web Development: A Comprehensive Guide</h1>
+        <div class="img-box"><img width="450" style="object-fit: cover;" src="https://img.freepik.com/free-vector/ui-ux-designers-isometric-composition-with-small-people-creating-custom-design-web-site-3d-vector-illustration_1284-68939.jpg?t=st=1713503854~exp=1713507454~hmac=b1f729df6fe60fb8b40b0a1a6588307905c5f656c3fe2666f100fbfcf795b7ac&w=740" alt=""></div>
+    
+<article>
+    <p>In today's digital age, the importance of web accessibility cannot be overstated. Web developers have a responsibility to ensure that their websites are usable by all individuals, regardless of their abilities or disabilities. Accessibility isn't just a legal requirement; it's a moral imperative and good business practice. By making websites accessible, developers can reach a broader audience, improve user experience, and foster inclusivity. In this article, we'll explore some essential tips for web developers to enhance accessibility in their projects.</p>
+    <h2>Understanding Accessibility</h2>
+    <p>Before diving into specific techniques, it's crucial to understand what web accessibility entails. Accessibility means designing and developing websites in a way that ensures people with disabilities can perceive, understand, navigate, and interact with the content effectively. Disabilities can encompass a wide range of conditions, including visual, auditory, motor, cognitive, and neurological impairments. Therefore, accessibility efforts should address various aspects of web design and functionality to accommodate diverse user needs.</p>
+    <h3>1. Semantic HTML</h3>
+    <p>Semantic HTML refers to using HTML elements according to their intended purpose and meaning. By employing proper semantic markup, developers provide clear structure and context to assistive technologies like screen readers. Some key practices include:</p>
+    <ul>
+      <li>Using headings (<code>&lt;h1&gt;</code> to <code>&lt;h6&gt;</code>) to organize content hierarchically.</li>
+      <li>Employing lists (<code>&lt;ul&gt;</code>, <code>&lt;ol&gt;</code>, <code>&lt;dl&gt;</code>) for structuring related items.</li>
+      <li>Using <code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;article&gt;</code>, and <code>&lt;footer&gt;</code> tags to delineate different sections of the page.</li>
+      <li>Applying appropriate form elements (<code>&lt;input&gt;</code>, <code>&lt;button&gt;</code>, <code>&lt;label&gt;</code>, <code>&lt;textarea&gt;</code>, etc.) with associated labels.</li>
+    </ul>
+    <p>Semantic HTML enhances both accessibility and search engine optimization (SEO) by making content more understandable and navigable.</p>
+    <h3>2. Keyboard Accessibility</h3>
+    <p>Many users rely on keyboards instead of mice to navigate websites, particularly those with motor disabilities. Therefore, web developers must ensure that all interactive elements and functionalities are accessible via keyboard alone. This involves:</p>
+    <ul>
+      <li>Ensuring proper tab order: Elements should receive focus in a logical sequence, following the natural flow of content.</li>
+      <li>Providing keyboard shortcuts: Offering keyboard shortcuts for common actions can improve efficiency for all users, especially those with mobility impairments.</li>
+      <li>Avoiding reliance on mouse events: Interactive elements should respond to keyboard events as well.</li>
+    </ul>
+    <p>Testing websites using only a keyboard is an effective way to identify and address keyboard accessibility issues.</p>
+    <h3>3. Alternative Text for Images</h3>
+    <p>Images play a significant role in web design, but they can pose barriers to users with visual impairments if not accompanied by descriptive alternative text. Developers should provide concise and descriptive alt attributes for all images, conveying their purpose and context. Alt text not only benefits visually impaired users but also improves SEO by providing context for search engines.</p>
+    <!-- Remaining sections omitted for brevity -->
+    <h3>Conclusion</h3>
+    <p>Web accessibility is a multifaceted endeavor that requires ongoing commitment and collaboration from developers, designers, content creators, and stakeholders. By incorporating accessibility principles into every stage of the web development process, developers can create inclusive digital experiences that empower all users to participate fully in the online world. Remember, accessibility is not just a feature; it's a fundamental aspect of web design that benefits everyone.</p>
+  </article>
+    </div>
+  </main>
+
+</body>
+</html>

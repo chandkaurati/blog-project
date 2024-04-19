@@ -776,6 +776,7 @@ footer .wrapper { text-align: center; }
     display:     flex;
     align-items: center;
     gap: 30px;
+    
   }
 
   .desktop-nav .nav-link {
